@@ -38,6 +38,7 @@
         .navbar h1 {
             margin: 0;
             font-size: 1.5rem;
+            cursor: pointer; /* Change cursor to pointer for home link */
         }
         .menu {
             display: flex;
@@ -158,12 +159,21 @@
         body {
             overflow: hidden; /* Prevent any overflow issues */
         }
+        
+        /* Hidden content styling */
+        .hidden-content {
+            display: none;
+            background-color: rgba(31, 31, 31, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <h1>Key Of Access</h1>
+        <h1 onclick="scrollToHome()">Key Of Access</h1>
         <ul class="menu">
             <li><a href="#whatsapp">Whatsapp Spy App</a></li>
             <li><a href="#keylogger">Keylogger</a></li>
@@ -192,7 +202,18 @@
         <div class="content">
             <h2>Whatsapp Spy App</h2>
             <p>Monitor WhatsApp messages and activities with advanced, discreet methods.</p>
-            <button class="cta-button">Learn More</button>
+            <button class="cta-button" onclick="toggleContent('whatsappContent')">Learn More</button>
+            <div id="whatsappContent" class="hidden-content">
+                <h3>WhatsApp Monitoring Features</h3>
+                <p>Our WhatsApp Spy App allows you to:</p>
+                <ul>
+                    <li>Read incoming and outgoing messages.</li>
+                    <li>Monitor media files shared on WhatsApp.</li>
+                    <li>View call logs and contact information.</li>
+                    <li>Access time-stamped activity reports.</li>
+                </ul>
+                <p>All features are discreet, ensuring you maintain privacy while keeping track of important conversations.</p>
+            </div>
         </div>
     </section>
 
@@ -201,7 +222,18 @@
         <div class="content">
             <h2>Keylogger</h2>
             <p>Capture every keystroke on a device with our secure and invisible keylogging software.</p>
-            <button class="cta-button">Learn More</button>
+            <button class="cta-button" onclick="toggleContent('keyloggerContent')">Learn More</button>
+            <div id="keyloggerContent" class="hidden-content">
+                <h3>Keylogger Capabilities</h3>
+                <p>With our Keylogger, you can:</p>
+                <ul>
+                    <li>Track every keystroke made on the target device.</li>
+                    <li>Capture passwords, emails, and chats.</li>
+                    <li>Access logs remotely with ease.</li>
+                    <li>Utilize stealth mode for undetectable monitoring.</li>
+                </ul>
+                <p>This tool is essential for ensuring security and monitoring user activity effectively.</p>
+            </div>
         </div>
     </section>
 
@@ -210,7 +242,18 @@
         <div class="content">
             <h2>iPhone Spy App</h2>
             <p>Track iPhone data, messages, and more without being detected.</p>
-            <button class="cta-button">Learn More</button>
+            <button class="cta-button" onclick="toggleContent('iphoneContent')">Learn More</button>
+            <div id="iphoneContent" class="hidden-content">
+                <h3>iPhone Monitoring Features</h3>
+                <p>Our iPhone Spy App enables you to:</p>
+                <ul>
+                    <li>Access text messages, iMessages, and calls.</li>
+                    <li>Monitor app usage and activity.</li>
+                    <li>View location history and live tracking.</li>
+                    <li>Retrieve deleted messages and media.</li>
+                </ul>
+                <p>Ensure you have all the necessary information at your fingertips without raising suspicion.</p>
+            </div>
         </div>
     </section>
 
@@ -265,11 +308,21 @@
         </a>
     </div>
 
-    <!-- JS for hamburger menu -->
+    <!-- JS for hamburger menu and content toggle -->
     <script>
         function toggleMenu() {
             const menu = document.querySelector('.menu');
             menu.classList.toggle('open');
+        }
+
+        function toggleContent(contentId) {
+            const content = document.getElementById(contentId);
+            content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
+        }
+
+        function scrollToHome() {
+            const homeSection = document.getElementById('home');
+            homeSection.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
