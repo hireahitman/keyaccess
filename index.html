@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Of Access</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <style>
+        /* Basic styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        h1, h2, p {
+            color: #e0e0e0;
+        }
+        a {
+            color: #e0e0e0;
+            text-decoration: none;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #2b2b2b;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+        .menu li {
+            margin: 0 1rem;
+        }
+
+        /* Hamburger menu styling */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 2px;
+            background-color: #e0e0e0;
+            margin: 3px 0;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 200px;
+                height: 100%;
+                flex-direction: column;
+                background-color: #2b2b2b;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+            }
+            .menu li {
+                margin: 1rem 0;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .menu.open {
+                right: 0;
+            }
+        }
+
+        /* Section styling */
+        section {
+            padding: 80px 20px;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Page specific sections */
+        #home {
+            background-image: url('https://i.ibb.co/dkzcd9x/DALL-E-2024-10-15-20-54-48-A-sleek-and-modern-depiction-of-Android-device-monitoring-showcasing-a-fu.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        #whatsapp, #keylogger, #iphone, #android {
+            background-size: cover;
+            background-position: center;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(31, 31, 31, 0.6); /* Dark overlay for readability */
+            z-index: 1; /* Ensure overlay is on top */
+        }
+        .content {
+            position: relative;
+            z-index: 2; /* Ensure content is above the overlay */
+        }
+        footer {
+            background-color: #2b2b2b;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column; /* Align buttons vertically */
+            gap: 10px; /* Space between buttons */
+            z-index: 1000; /* Make sure buttons are on top */
+        }
+
+        .floating-button {
+            background-color: #007bff; /* Button color */
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            padding: 10px; /* Padding inside buttons */
+            transition: transform 0.2s; /* Animation on hover */
+        }
+
+        .floating-button:hover {
+            transform: scale(1.1); /* Scale effect on hover */
+        }
+
+        .floating-button img {
+            width: 30px; /* Icon size */
+            height: 30px;
+            display: block; /* Ensure icons are displayed as blocks */
+        }
+
+        /* Ensure no overflow from the body */
+        body {
+            overflow: hidden; /* Prevent any overflow issues */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>Key Of Access</h1>
+        <ul class="menu">
+            <li><a href="#whatsapp">Whatsapp Spy App</a></li>
+            <li><a href="#keylogger">Keylogger</a></li>
+            <li><a href="#iphone">iPhone Spy App</a></li>
+            <li><a href="#android">Android Spy App</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- Sections with Background Images -->
+    <section id="home">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>Welcome to Key Of Access - Advanced Spy Applications</h2>
+        </div>
+    </section>
+
+    <section id="whatsapp" style="background-image: url('https://ibb.co/bd1XhB3');">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>Whatsapp Spy App</h2>
+            <p>Monitor WhatsApp messages and activities with advanced, discreet methods.</p>
+            <button class="cta-button">Learn More</button>
+        </div>
+    </section>
+
+    <section id="keylogger" style="background-image: url('https://ibb.co/nQW8r0v');">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>Keylogger</h2>
+            <p>Capture every keystroke on a device with our secure and invisible keylogging software.</p>
+            <button class="cta-button">Learn More</button>
+        </div>
+    </section>
+
+    <section id="iphone" style="background-image: url('https://i.ibb.co/KV1z6Gk/DALL-E-2024-10-14-17-28-32-A-sleek-modern-depiction-of-i-Phone-monitoring-showcasing-a-futuristic-i.webp');">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>iPhone Spy App</h2>
+            <p>Track iPhone data, messages, and more without being detected.</p>
+            <button class="cta-button">Learn More</button>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2>FAQ</h2>
+        <details>
+            <summary>Does the app work on both iOS and Android?</summary>
+            <p>Yes, Key Of Access is compatible with both iOS and Android devices.</p>
+        </details>
+        <details>
+            <summary>Do I need physical access to the target device for installation?</summary>
+            <p>No, physical access is not required for installation. The app can be installed remotely.</p>
+        </details>
+        <details>
+            <summary>What happens when the payment license expires?</summary>
+            <p>The payment license remains valid until the target phone number is changed to another number.</p>
+        </details>
+        <details>
+            <summary>How do I ensure that my data is secure?</summary>
+            <p>Key Of Access employs the highest security protocols to protect your data and ensure only you can access it.</p>
+        </details>
+        <details>
+            <summary>Can I access data from multiple devices?</summary>
+            <p>Our platform allows you to manage multiple devices from a single account.</p>
+        </details>
+        <details>
+            <summary>What happens if I forget my password?</summary>
+            <p>You can easily reset your password through our password recovery process.</p>
+        </details>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Get in touch with us through our contact form or reach us at support@keyofaccess.com.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Key Of Access. All rights reserved.</p>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="tel:+1234567890" class="floating-button call" title="Call Us">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Call Icon" />
+        </a>
+        <a href="sms:+1234567890" class="floating-button text" title="Text Us">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/sms.png" alt="Text Icon" />
+        </a>
+        <a href="https://t.me/yourtelegramusername" class="floating-button telegram" title="Chat on Telegram">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram.png" alt="Telegram Icon" />
+        </a>
+    </div>
+
+    <!-- JS for hamburger menu -->
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
