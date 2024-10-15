@@ -182,7 +182,7 @@
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="hamburger" onclick="toggleMenu()">
+        <div class="hamburger" onclick="toggleMenu(event)">
             <div></div>
             <div></div>
             <div></div>
@@ -257,6 +257,26 @@
         </div>
     </section>
 
+    <section id="android" style="background-image: url('https://i.ibb.co/x6S4W4b/DALL-E-2024-10-15-20-52-54-A-sleek-and-modern-depiction-of-Android-device-monitoring-showcasing-a-fu.webp');">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>Android Spy App</h2>
+            <p>Access Android device information and data securely and secretly.</p>
+            <button class="cta-button" onclick="toggleContent('androidContent')">Learn More</button>
+            <div id="androidContent" class="hidden-content">
+                <h3>Android Monitoring Features</h3>
+                <p>Our Android Spy App allows you to:</p>
+                <ul>
+                    <li>Monitor calls, messages, and app usage.</li>
+                    <li>Access multimedia files and documents.</li>
+                    <li>Track real-time location and geofencing alerts.</li>
+                    <li>Retrieve internet browsing history and bookmarks.</li>
+                </ul>
+                <p>Gain complete control over the Android device without drawing attention.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="faq">
         <h2>FAQ</h2>
         <details>
@@ -310,9 +330,10 @@
 
     <!-- JS for hamburger menu and content toggle -->
     <script>
-        function toggleMenu() {
+        function toggleMenu(event) {
             const menu = document.querySelector('.menu');
             menu.classList.toggle('open');
+            event.stopPropagation(); // Prevent click event from bubbling up
         }
 
         function toggleContent(contentId) {
@@ -324,6 +345,14 @@
             const homeSection = document.getElementById('home');
             homeSection.scrollIntoView({ behavior: 'smooth' });
         }
+
+        // Close menu when clicking anywhere on the document
+        document.addEventListener('click', function(event) {
+            const menu = document.querySelector('.menu');
+            if (menu.classList.contains('open') && !menu.contains(event.target) && !event.target.closest('.hamburger')) {
+                menu.classList.remove('open');
+            }
+        });
     </script>
 </body>
 </html>
