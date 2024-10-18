@@ -3,358 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Key Of Access</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
     <style>
-        /* Basic styling */
         body {
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #1f1f1f;
-            color: #e0e0e0;
-            overflow-x: hidden;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.7) url("https://i.ibb.co/dkzcd9x/DALL-E-2024-10-15-20-54-48-A-sleek-and-modern-depiction-of-Android-device-monitoring-showcasing-a-fu.webp") no-repeat center center fixed;
+            background-size: cover;
         }
-        h1, h2, p {
-            color: #e0e0e0;
-        }
-        a {
-            color: #e0e0e0;
-            text-decoration: none;
-        }
-
-        /* Navbar styling */
-        .navbar {
+        header {
+            position: relative;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            background-color: #2b2b2b;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        .navbar h1 {
-            margin: 0;
-            font-size: 1.5rem;
-            cursor: pointer; /* Change cursor to pointer for home link */
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.5);
         }
         .menu {
-            display: flex;
-            list-style: none;
-        }
-        .menu li {
-            margin: 0 1rem;
-        }
-
-        /* Hamburger menu styling */
-        .hamburger {
             display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        .hamburger div {
-            width: 25px;
-            height: 2px;
-            background-color: #e0e0e0;
-            margin: 3px 0;
-        }
-
-        /* Responsive styling */
-        @media (max-width: 768px) {
-            .menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 200px;
-                height: 100%;
-                flex-direction: column;
-                background-color: #2b2b2b;
-                justify-content: center;
-                align-items: center;
-                transition: right 0.3s ease;
-            }
-            .menu li {
-                margin: 1rem 0;
-            }
-            .hamburger {
-                display: flex;
-            }
-            .menu.open {
-                right: 0;
-            }
-        }
-
-        /* Section styling */
-        section {
-            padding: 80px 20px;
-            min-height: 100vh;
-            position: relative;
-        }
-
-        /* Page specific sections */
-        #home {
-            background-image: url('https://i.ibb.co/dkzcd9x/DALL-E-2024-10-15-20-54-48-A-sleek-and-modern-depiction-of-Android-device-monitoring-showcasing-a-fu.webp');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        #whatsapp, #keylogger, #iphone, #android {
-            background-size: cover;
-            background-position: center;
-        }
-        .overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(31, 31, 31, 0.6); /* Dark overlay for readability */
-            z-index: 1; /* Ensure overlay is on top */
+            top: 60px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #fff;
+            z-index: 10;
         }
-        .content {
-            position: relative;
-            z-index: 2; /* Ensure content is above the overlay */
+        .menu a {
+            display: block;
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
         }
-        footer {
-            background-color: #2b2b2b;
-            padding: 1rem 0;
-            text-align: center;
+        .menu a:hover {
+            background-color: rgba(255, 215, 0, 0.6);
         }
-
-        /* Floating Buttons */
-        .floating-buttons {
+        .menu-button {
+            cursor: pointer;
+            background-color: rgba(255, 215, 0, 0.6);
+            border: none;
+            padding: 10px;
+            color: black;
+            font-size: 18px;
+        }
+        h1, h2, h3 {
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        h2 {
+            font-size: 1.5rem; /* Reduced by 50% */
+        }
+        h3 {
+            font-size: 1.2rem; /* Reduced by 50% */
+        }
+        .section {
+            padding: 20px;
+            margin: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        .contact-buttons {
             position: fixed;
             right: 20px;
             bottom: 20px;
             display: flex;
-            flex-direction: column; /* Align buttons vertically */
-            gap: 10px; /* Space between buttons */
-            z-index: 1000; /* Make sure buttons are on top */
+            flex-direction: column;
+            gap: 10px;
         }
-
-        .floating-button {
-            background-color: #007bff; /* Button color */
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            padding: 10px; /* Padding inside buttons */
-            transition: transform 0.2s; /* Animation on hover */
+        .contact-button {
+            background-color: gold;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            color: black;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-
-        .floating-button:hover {
-            transform: scale(1.1); /* Scale effect on hover */
-        }
-
-        .floating-button img {
-            width: 30px; /* Icon size */
-            height: 30px;
-            display: block; /* Ensure icons are displayed as blocks */
-        }
-
-        /* Ensure no overflow from the body */
-        body {
-            overflow: hidden; /* Prevent any overflow issues */
-        }
-        
-        /* Hidden content styling */
-        .hidden-content {
-            display: none;
-            background-color: rgba(31, 31, 31, 0.8);
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 10px;
+        .icon {
+            font-size: 24px; /* Adjust icon size */
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <h1 onclick="scrollToHome()">Key Of Access</h1>
-        <ul class="menu">
-            <li><a href="#whatsapp">Whatsapp Spy App</a></li>
-            <li><a href="#keylogger">Keylogger</a></li>
-            <li><a href="#iphone">iPhone Spy App</a></li>
-            <li><a href="#android">Android Spy App</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger" onclick="toggleMenu(event)">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </nav>
 
-    <!-- Sections with Background Images -->
-    <section id="home">
-        <div class="overlay"></div>
-        <div class="content">
-            <h2>Welcome to Key Of Access - Advanced Spy Applications</h2>
-        </div>
-    </section>
-
-    <section id="whatsapp" style="background-image: url('https://ibb.co/bd1XhB3');">
-        <div class="overlay"></div>
-        <div class="content">
-            <h2>Whatsapp Spy App</h2>
-            <p>Monitor WhatsApp messages and activities with advanced, discreet methods.</p>
-            <button class="cta-button" onclick="toggleContent('whatsappContent')">Learn More</button>
-            <div id="whatsappContent" class="hidden-content">
-                <h3>WhatsApp Monitoring Features</h3>
-                <p>Our WhatsApp Spy App allows you to:</p>
-                <ul>
-                    <li>Read incoming and outgoing messages.</li>
-                    <li>Monitor media files shared on WhatsApp.</li>
-                    <li>View call logs and contact information.</li>
-                    <li>Access time-stamped activity reports.</li>
-                </ul>
-                <p>All features are discreet, ensuring you maintain privacy while keeping track of important conversations.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="keylogger" style="background-image: url('https://ibb.co/nQW8r0v');">
-        <div class="overlay"></div>
-        <div class="content">
-            <h2>Keylogger</h2>
-            <p>Capture every keystroke on a device with our secure and invisible keylogging software.</p>
-            <button class="cta-button" onclick="toggleContent('keyloggerContent')">Learn More</button>
-            <div id="keyloggerContent" class="hidden-content">
-                <h3>Keylogger Capabilities</h3>
-                <p>With our Keylogger, you can:</p>
-                <ul>
-                    <li>Track every keystroke made on the target device.</li>
-                    <li>Capture passwords, emails, and chats.</li>
-                    <li>Access logs remotely with ease.</li>
-                    <li>Utilize stealth mode for undetectable monitoring.</li>
-                </ul>
-                <p>This tool is essential for ensuring security and monitoring user activity effectively.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="iphone" style="background-image: url('https://i.ibb.co/KV1z6Gk/DALL-E-2024-10-14-17-28-32-A-sleek-modern-depiction-of-i-Phone-monitoring-showcasing-a-futuristic-i.webp');">
-        <div class="overlay"></div>
-        <div class="content">
-            <h2>iPhone Spy App</h2>
-            <p>Track iPhone data, messages, and more without being detected.</p>
-            <button class="cta-button" onclick="toggleContent('iphoneContent')">Learn More</button>
-            <div id="iphoneContent" class="hidden-content">
-                <h3>iPhone Monitoring Features</h3>
-                <p>Our iPhone Spy App enables you to:</p>
-                <ul>
-                    <li>Access text messages, iMessages, and calls.</li>
-                    <li>Monitor app usage and activity.</li>
-                    <li>View location history and live tracking.</li>
-                    <li>Retrieve deleted messages and media.</li>
-                </ul>
-                <p>Ensure you have all the necessary information at your fingertips without raising suspicion.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="android" style="background-image: url('https://i.ibb.co/x6S4W4b/DALL-E-2024-10-15-20-52-54-A-sleek-and-modern-depiction-of-Android-device-monitoring-showcasing-a-fu.webp');">
-        <div class="overlay"></div>
-        <div class="content">
-            <h2>Android Spy App</h2>
-            <p>Access Android device information and data securely and secretly.</p>
-            <button class="cta-button" onclick="toggleContent('androidContent')">Learn More</button>
-            <div id="androidContent" class="hidden-content">
-                <h3>Android Monitoring Features</h3>
-                <p>Our Android Spy App allows you to:</p>
-                <ul>
-                    <li>Monitor calls, messages, and app usage.</li>
-                    <li>Access multimedia files and documents.</li>
-                    <li>Track real-time location and geofencing alerts.</li>
-                    <li>Retrieve internet browsing history and bookmarks.</li>
-                </ul>
-                <p>Gain complete control over the Android device without drawing attention.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq">
-        <h2>FAQ</h2>
-        <details>
-            <summary>Does the app work on both iOS and Android?</summary>
-            <p>Yes, Key Of Access is compatible with both iOS and Android devices.</p>
-        </details>
-        <details>
-            <summary>Do I need physical access to the target device for installation?</summary>
-            <p>No, physical access is not required for installation. The app can be installed remotely.</p>
-        </details>
-        <details>
-            <summary>What happens when the payment license expires?</summary>
-            <p>The payment license remains valid until the target phone number is changed to another number.</p>
-        </details>
-        <details>
-            <summary>How do I ensure that my data is secure?</summary>
-            <p>Key Of Access employs the highest security protocols to protect your data and ensure only you can access it.</p>
-        </details>
-        <details>
-            <summary>Can I access data from multiple devices?</summary>
-            <p>Our platform allows you to manage multiple devices from a single account.</p>
-        </details>
-        <details>
-            <summary>What happens if I forget my password?</summary>
-            <p>You can easily reset your password through our password recovery process.</p>
-        </details>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Get in touch with us through our contact form or reach us at support@keyofaccess.com.</p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Key Of Access. All rights reserved.</p>
-    </footer>
-
-    <!-- Floating Action Buttons -->
-    <div class="floating-buttons">
-        <a href="tel:+1234567890" class="floating-button call" title="Call Us">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Call Icon" />
-        </a>
-        <a href="sms:+1234567890" class="floating-button text" title="Text Us">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/sms.png" alt="Text Icon" />
-        </a>
-        <a href="https://t.me/yourtelegramusername" class="floating-button telegram" title="Chat on Telegram">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram.png" alt="Telegram Icon" />
-        </a>
+<header>
+    <h1>Key Of Access</h1>
+    <button class="menu-button" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="menu" id="menu">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#android" onclick="closeMenu()">Android Spy App</a>
+        <a href="#iphone" onclick="closeMenu()">iPhone Spy App</a>
+        <a href="#whatsapp" onclick="closeMenu()">WhatsApp Spy App</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
     </div>
+</header>
 
-    <!-- JS for hamburger menu and content toggle -->
-    <script>
-        function toggleMenu(event) {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('open');
-            event.stopPropagation(); // Prevent click event from bubbling up
+<section id="home" class="section">
+    <h2>Introducing the Key of Access Zero Click and Zero Interaction Exploit Spy App</h2>
+    <p>A formidable innovation forged within the shadowy realms of cybersecurity’s black arts. This sophisticated tool integrates dark web methodologies to offer unparalleled surveillance capabilities with the stealth of a phantom. Let’s explore the esoteric “zero click” and “zero interaction” technologies and their transformative impact on covert operations.</p>
+    <p>“Zero click” technology represents a pivotal advancement in the clandestine world of espionage, eliminating the need for any physical interaction with the target’s device. By eschewing traditional methods such as manual installation, rooting, or jailbreaking—which are prone to detection—Key of Access employs obscure zero-day exploits and covert insertion techniques to seamlessly infiltrate the target device’s operating system, allowing for silent data extraction without the owner’s awareness.</p>
+    <p>“Zero interaction” deepens this level of secrecy, ensuring that surveillance activities remain entirely undetectable. Unlike typical spyware that may trigger device notifications or alter operational patterns, Key of Access maintains a spectral presence. It utilizes polymorphic algorithms that continually rewrite its codebase, adeptly evading detection by the most advanced anti-spyware systems and forensic tools.</p>
+    <p>Moreover, the introduction of advanced AI into the Key of Access system has revolutionized the user experience, making the process incredibly intuitive and more effective than ever. This AI-enhanced spy app, a first in the market, employs machine learning algorithms to adapt to various digital environments, optimizing stealth and efficacy across different devices and operating systems.</p>
+    <p>Beyond these mystical features, Key of Access offers a full arsenal of surveillance tools. It provides ghostly access to encrypted messaging apps like WhatsApp and Telegram, shadow tracking of call logs, SMS, and discreet monitoring of web browsing. Its GPS shadow tracking feature employs sophisticated signal reconstruction techniques for precise location monitoring, and its advanced data extraction capabilities can resurrect previously deleted data, maintaining an invisible footprint throughout its operation.</p>
+    <p>Key of Access is available for various platforms, including Android, iPhone, and universal systems. We invite you to visit our website and explore each service to select the one that best fits your espionage needs. Additionally, we provide robust anti-spyware security protection to safeguard your devices against the type of espionage techniques our app utilizes, ensuring a formidable defense in the digital shadows.</p>
+    <p>In summary, the Key of Access Zero Click and Zero Interaction Exploit Spy App transcends traditional surveillance methods, blending advanced exploitation techniques with ghost-like stealth, an AI-enhanced user-friendly interface, and a comprehensive suite of espionage tools. Step into the shadowy world of cybersecurity with Key of Access and elevate your surveillance to new, mystical heights. Choose the perfect spectral tool for your needs and master the art of digital oversight.</p>
+</section>
+
+<section id="android" class="section">
+    <h2>Unveiling the Key of Access Android Spy App</h2>
+    <p>An advanced surveillance tool tailored for the Android platform. This sophisticated app reshapes how you monitor target devices, offering unparalleled discretion and in-depth control. Below are the enhanced features and functionalities available in both the Standard and Premium packages:</p>
+    <h3>Standard Package Features</h3>
+    <ol>
+        <li>Universal App Access: Enjoy comprehensive access to all applications on the target Android device, including WhatsApp and other social media platforms. Access extends to all files stored on the device for a full overview of digital activities.</li>
+        <li>Call Logs: Detailed records of all outgoing, incoming, and missed calls are provided, including date, time stamps, and call durations. This package does not include live call listening or video call viewing capabilities.</li>
+        <li>Contact Access: Full visibility into the device’s contact list, providing names and numbers stored.</li>
+        <li>Multilingual Dashboard: A user-friendly dashboard that supports multiple languages, allowing you to customize the interface according to your preferences.</li>
+        <li>Live GPS Tracking: Track the device’s location in real-time using Google Maps integration, with interactive features to zoom and pan for precise location details.</li>
+    </ol>
+    <h3>Premium Features of Android Spy App</h3>
+    <ol>
+        <li>Enhanced Call Interception: Listen to live calls in real-time and access full video call visibility, allowing you to observe and hear all participants without detection.</li>
+        <li>Ambient Recording: Activate the device’s microphone to record surrounding audio, capturing conversations and background sounds to gather more contextual information.</li>
+        <li>Access to Encrypted Media: Retrieve encrypted files and communications, providing access to content typically secured by end-to-end encryption.</li>
+        <li>Advanced Historical Data Recovery: Extend your access to deleted files and texts up to 24 months old, surpassing the 12-month retrieval capacity of the standard package.</li>
+        <li>Remote Camera Manipulation: Remotely control the device’s camera to discreetly take pictures or videos, assisted by live support to ensure stealthy operation without alerting the target.</li>
+        <li>Social Media Monitor: Gain direct access to the logs and activities of all major social platforms, capturing messages, posts, and interactions that give deeper insight into the target’s social behaviors.</li>
+        <li>Multi-Device Compatibility: Easily manage multiple target devices from a single account, allowing for streamlined operations if you monitor several devices.</li>
+    </ol>
+    <p>With the Key of Access Android Spy App, you hold the power to monitor, investigate, and protect your interests with a seamless blend of stealth and technology.</p>
+</section>
+
+<section id="iphone" class="section">
+    <h2>Introducing the Key of Access iPhone Spy App</h2>
+    <p>Tailored specifically for iOS devices to deliver advanced surveillance capabilities with precision and stealth. Below are the detailed features of both the Standard and Premium packages:</p>
+    <h3>Standard Package Features</h3>
+    <ol>
+        <li>Full App Visibility: Monitor all apps installed on the target iPhone, including but not limited to social media and communication applications.</li>
+        <li>Comprehensive Call Logs: Access detailed call records, including the date, time, and duration of calls.</li>
+        <li>Contact List Insights: View all contacts saved on the device.</li>
+        <li>GPS Location Tracking: Utilize GPS tracking features to monitor the target device’s location in real-time, ensuring you’re always aware of their whereabouts.</li>
+    </ol>
+    <h3>Premium Features of iPhone Spy App</h3>
+    <ol>
+        <li>Live Call Listening: Secretly listen to live phone calls, gaining insights into conversations without alerting the target.</li>
+        <li>Ambient Audio Recording: Activate the microphone remotely to capture surrounding audio for additional context.</li>
+        <li>Access to Deleted Data: Recover deleted messages and files, allowing for a comprehensive view of the target’s communication history.</li>
+        <li>Social Media Monitoring: Access messages and activity across all major social platforms, capturing the target’s online behavior.</li>
+        <li>Advanced GPS Tracking: Enhanced tracking features that include geofencing and location history tracking for deeper insights into movements.</li>
+        <li>Multiple Device Management: Monitor multiple iOS devices from a single account, simplifying your oversight capabilities.</li>
+    </ol>
+    <p>The Key of Access iPhone Spy App is designed for those who require uncompromising insight and security, making it an indispensable tool for modern surveillance needs.</p>
+</section>
+
+<section id="whatsapp" class="section">
+    <h2>Key of Access WhatsApp Spy App Features</h2>
+    <p>This app offers comprehensive access to WhatsApp on the target device, functioning as if you have the exact WhatsApp application of the target on your own phone. Gain full visibility into both incoming and outgoing texts, pictures, and videos.</p>
+    <h3>WhatsApp Monitoring Capabilities</h3>
+    <ol>
+        <li>Text Monitoring: Read all incoming and outgoing messages in real time, allowing for constant vigilance over the target’s conversations.</li>
+        <li>Media Access: View all images, videos, and voice messages sent and received on WhatsApp, ensuring you’re privy to all communication formats.</li>
+        <li>Call Logging: Track all WhatsApp calls made and received, including duration and timestamps.</li>
+        <li>Group Chat Monitoring: Gain access to group conversations, providing insights into broader social interactions.</li>
+    </ol>
+    <h3>Premium WhatsApp Spy Features</h3>
+    <ol>
+        <li>Stealth Mode Operation: Operate the monitoring app without detection, maintaining a ghost-like presence on the target device.</li>
+        <li>Content Alerts: Set alerts for specific keywords or contacts to receive immediate notifications of significant communications.</li>
+        <li>Backup Access: Retrieve a comprehensive backup of the target’s WhatsApp data, ensuring no conversation or media goes unnoticed.</li>
+        <li>Comprehensive Analysis: Utilize advanced analytics to understand communication patterns and social behavior.</li>
+    </ol>
+    <p>The Key of Access WhatsApp Spy App is the ultimate surveillance tool for gaining control over conversations and interactions that matter most to you.</p>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Please reach out for any inquiries or support.</p>
+    <p>You can contact us through the following means:</p>
+    <ul>
+        <li>Email: support@keyofaccess.com</li>
+        <li>Phone: +1234567890</li>
+        <li>Telegram: @yourtelegramhandle</li>
+    </ul>
+    <p>Our team is available to assist you with any questions or technical support you may need.</p>
+</section>
+
+<div class="contact-buttons">
+    <button class="contact-button" onclick="window.open('tel:+1234567890')">
+        <i class="fas fa-phone icon"></i>
+    </button>
+    <button class="contact-button" onclick="window.open('sms:+1234567890')">
+        <i class="fas fa-sms icon"></i>
+    </button>
+    <button class="contact-button" onclick="window.open('https://t.me/your-telegram-handle')">
+        <i class="fab fa-telegram-plane icon"></i>
+    </button>
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        if (menu.style.display === "block") {
+            menu.style.display = "none";
+        } else {
+            menu.style.display = "block";
         }
+    }
 
-        function toggleContent(contentId) {
-            const content = document.getElementById(contentId);
-            content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
+    function closeMenu() {
+        const menu = document.getElementById("menu");
+        menu.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        const menu = document.getElementById("menu");
+        if (!event.target.matches('.menu-button') && !menu.contains(event.target)) {
+            menu.style.display = "none";
         }
+    }
+</script>
 
-        function scrollToHome() {
-            const homeSection = document.getElementById('home');
-            homeSection.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Close menu when clicking anywhere on the document
-        document.addEventListener('click', function(event) {
-            const menu = document.querySelector('.menu');
-            if (menu.classList.contains('open') && !menu.contains(event.target) && !event.target.closest('.hamburger')) {
-                menu.classList.remove('open');
-            }
-        });
-    </script>
-    <script src="scripts.js"></script>
 
 </body>
 </html>
