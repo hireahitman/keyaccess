@@ -1,224 +1,103 @@
-/* Basic Reset */
-* {
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    color: #ffffff; /* Text color */
+    background: rgba(0, 0, 0, 0.8) url('https://i.ibb.co/dkzcd9x/DALL-E-2024-10-15-20-54-48-A-sleek-and-modern-depiction-of-Android-device-monitoring-showcasing-a-fu.webp') no-repeat center center fixed;
+    background-size: cover; /* Cover the entire background */
 }
 
-/* Basic Body Styling */
-body {
-    font-family: 'Arial', sans-serif;
-    color: #e0e0e0;
-    background-color: #1f1f1f;
-    overflow-x: hidden;
+h1, h2, h3 {
+    margin: 0.5em 0;
 }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: rgba(43, 43, 43, 0.8); /* Semi-transparent */
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar h1 {
-    font-size: 1.8rem;
-}
-
-.menu {
-    display: flex;
-    list-style: none;
-}
-
-.menu li {
-    margin: 0 1rem;
-}
-
-.menu a {
-    color: #e0e0e0;
-    text-decoration: none;
-}
-
-/* Hamburger Menu for smaller screens */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger div {
-    width: 25px;
-    height: 2px;
-    background-color: #e0e0e0;
-    margin: 3px 0;
-}
-
-/* Sections Styling */
-section {
-    position: relative;
-    padding: 100px 20px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Reduce background opacity */
-    z-index: 1;
-}
-
-.content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
+/* Heading Styles */
+h1 {
+    font-size: 2.5em; /* Adjust as needed */
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 1.5em; /* Reduced heading size */
 }
 
+h3 {
+    font-size: 1.2em; /* Reduced heading size */
+}
+
+/* Paragraph Styles */
 p {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 20px;
+    line-height: 1.6;
+    margin: 1em 0;
 }
 
-/* Call-to-action Button Styling */
-.cta-button {
-    padding: 10px 20px;
-    background-color: #e0e0e0;
-    color: #1f1f1f;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
+/* Hamburger Menu Styles */
+.menu {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    width: 250px;
+    height: 100%;
+    z-index: 999;
+    padding: 20px;
 }
 
-.cta-button:hover {
-    background-color: #c0c0c0;
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
 }
 
-/* Footer Styling */
-footer {
-    background-color: #2b2b2b;
-    padding: 1rem 0;
-    text-align: center;
-    font-size: 1rem;
-}
-
-/* Mobile-first Styles */
-@media (max-width: 768px) {
-    .navbar h1 {
-        font-size: 1.4rem;
-    }
-
-    .menu {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-        background-color: rgba(43, 43, 43, 0.9);
-        justify-content: center;
-        align-items: center;
-        transition: right 0.3s ease;
-    }
-
-    .menu.open {
-        right: 0;
-    }
-
-    .menu li {
-        margin: 1.5rem 0;
-        font-size: 1.5rem;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    p {
-        font-size: 1.1rem;
-    }
-}
-
-/* Extra-small screens */
-@media (max-width: 480px) {
-    h2 {
-        font-size: 1.4rem;
-    }
-
-    p {
-        font-size: 0.9rem;
-    }
-
-    .cta-button {
-        width: 100%;
-    }
-}
-/* Floating Buttons */
+/* Floating Button Styles */
 .floating-buttons {
     position: fixed;
-    right: 20px;
     bottom: 20px;
+    right: 20px;
     display: flex;
-    flex-direction: column; /* Align buttons vertically */
+    flex-direction: column;
     gap: 10px; /* Space between buttons */
-    z-index: 1000; /* Make sure buttons are on top */
 }
 
 .floating-button {
-    background-color: #007bff; /* Button color */
+    background-color: gold; /* Button color */
+    border: none;
     border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    padding: 10px; /* Padding inside buttons */
-    transition: transform 0.2s; /* Animation on hover */
-}
-
-.floating-button:hover {
-    transform: scale(1.1); /* Scale effect on hover */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 .floating-button img {
-    width: 30px; /* Icon size */
-    height: 30px;
-    display: block; /* Ensure icons are displayed as blocks */
+    width: 70%; /* Resize icons */
 }
 
-/* Ensure no overflow from the body */
-body {
-    overflow: hidden; /* Prevent any overflow issues */
+/* Responsive Styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em; /* Smaller headings on mobile */
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    .menu {
+        width: 200px; /* Adjust menu width for mobile */
+    }
+}
+
+/* Show Menu */
+.show {
+    display: block; /* Show menu when active */
 }
