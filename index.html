@@ -22,7 +22,6 @@
             align-items: center;
             padding: 10px 20px;
             background: rgba(0, 0, 0, 0.5);
-            flex-wrap: wrap;
         }
         .menu {
             display: none;
@@ -92,16 +91,17 @@
             font-size: 24px; /* Adjust icon size */
         }
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
+            h1 {
+                font-size: 2rem; /* Smaller font for mobile */
+            }
+            h2 {
+                font-size: 1.25rem; /* Smaller font for mobile */
+            }
+            h3 {
+                font-size: 1rem; /* Smaller font for mobile */
             }
             .menu {
                 right: 10px;
-                width: 80%;
-            }
-            .menu-button {
-                margin-bottom: 10px;
             }
         }
     </style>
@@ -149,8 +149,7 @@
         <li>Enhanced Call Interception: Listen to live calls in real-time and access full video call visibility, allowing you to observe and hear all participants without detection.</li>
         <li>Ambient Recording: Activate the device’s microphone to record surrounding audio, capturing conversations and background sounds to gather more contextual information.</li>
         <li>Access to Encrypted Media: Retrieve encrypted files and communications, providing access to content typically secured by end-to-end encryption.</li>
-        <li>Advanced Historical Data Recovery: Extend your access to deleted files and texts up to 24 months old, surpassing the 12-month retrieval capacity of the standard package.</li>
-        <li>Remote Camera Manipulation: Utilize remote controls to activate the front or rear camera, capturing images and video in real-time, undetected by the target.</li>
+        <li>Advanced Historical Data Recovery: Extend your access to deleted files and texts up to 24 months old, ensuring that critical information is never truly lost.</li>
         <li>Multi-Device Compatibility: Easily manage multiple target devices from a single account, allowing for streamlined operations if you monitor several devices.</li>
     </ol>
     <p>With the Key of Access Android Spy App, you hold the power to monitor, investigate, and protect your interests with a seamless blend of stealth and technology.</p>
@@ -233,17 +232,16 @@
         menu.style.display = "none";
     }
 
-    window.onclick = function(event) {
-        const menu = document.getElementById("menu");
-        if (event.target.matches('.menu-button') === false && event.target.closest('.menu') === null) {
-            menu.style.display = "none";
-        }
-    }
-
     function scrollToSection(sectionId) {
         const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
+        section.scrollIntoView({ behavior: 'smooth' });
+        closeMenu(); // Close the menu when navigating
+    }
+
+    window.onclick = function(event) {
+        const menu = document.getElementById("menu");
+        if (!event.target.matches('.menu-button') && !event.target.closest('.menu')) {
+            menu.style.display = "none";
         }
     }
 </script>
