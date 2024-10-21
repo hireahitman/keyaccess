@@ -41,6 +41,7 @@
 
         nav {
             display: flex;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -48,6 +49,7 @@
             padding: 10px;
             text-decoration: none;
             margin: 0 5px;
+            font-size: 14px;
         }
 
         nav a:hover {
@@ -58,7 +60,7 @@
         /* Hero Section */
         .hero {
             text-align: center;
-            background: url('hero-background.jpg') no-repeat center center/cover;
+            background: #222;
             color: #fff;
             padding: 100px 20px;
         }
@@ -151,13 +153,67 @@
             text-align: center;
             padding: 10px 20px;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin-bottom: 10px;
+                font-size: 16px;
+            }
+
+            section h2 {
+                font-size: 26px;
+            }
+
+            section p {
+                font-size: 16px;
+            }
+
+            .cta {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .cta {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            nav a {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- Header -->
     <header>
-        <div class="logo">KEY OF ACCESS</div>
+        <div class="logo">Key of Access</div>
         <div class="translator">
             <div id="google_translate_element"></div>
         </div>
@@ -213,7 +269,7 @@
     var _smartsupp = _smartsupp || {};
     _smartsupp.key = '401bcc9fd07ba18c08b694a3122d6645acb2ba59';
     window.smartsupp||(function(d) {
-      var s,c,o=smartsupp=function(){ o..push(arguments)};o.=[];
+      var s,c,o=smartsupp=function(){ o.push(arguments)};o=[];
       s=d.getElementsByTagName('script')[0];c=d.createElement('script');
       c.type='text/javascript';c.charset='utf-8';c.async=true;
       c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
