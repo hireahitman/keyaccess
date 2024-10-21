@@ -1,173 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surveillance SaaS</title>
-    <style>
-        /* Basic Styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #2C3E50;
-            padding: 15px;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        .nav-bar {
-            display: flex;
-            gap: 15px;
-        }
-        .nav-bar a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-        }
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(to right, #2980B9, #6DD5FA);
-            color: white;
-        }
-        .hero h2 {
-            font-size: 2.5rem;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            margin: 20px 0;
-        }
-        .cta-button {
-            padding: 15px 30px;
-            background-color: #e67e22;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        .features, .testimonials, .refund-policy, footer {
-            padding: 50px 20px;
-            text-align: center;
-        }
-        .features h3, .testimonials h3, .refund-policy h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-        .features .feature-item {
-            background: white;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .feature-item h4 {
-            font-size: 1.5rem;
-        }
-        footer {
-            background-color: #2C3E50;
-            color: white;
-        }
-        footer a {
-            color: #f39c12;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surveillance Solutions - Spy & Anti-Spyware Apps</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      font-size: 1.5rem;
+    }
+    header .google-translate {
+      margin-left: 1rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .section {
+      padding: 2rem 0;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .cta-button {
+      background-color: #28a745;
+      color: white;
+      padding: 1rem 2rem;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .cta-button:hover {
+      background-color: #218838;
+    }
+    .testimonials {
+      background-color: #fff;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .testimonials .testimonial {
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .contact {
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <h3>KEY OF ACCESS</h3>
-        <!-- Google Translator -->
-        <div id="google_translate_element"></div>
-        <div class="nav-bar">
-            <a href="#iphone-spy">iPhone Spy App</a>
-            <a href="#whatsapp-spy">WhatsApp Spy App</a>
-            <a href="#android-spy">Android Spy App</a>
-            <a href="#anti-spyware">Anti-Spyware</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#refund-policy">Refund Policy</a>
-        </div>
-    </header>
+<header>
+  <div class="logo">Surveillance Solutions</div>
+  <!-- Google Translator -->
+  <div class="google-translate">
+    <div id="google_translate_element"></div>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Secure Your Digital Space</h2>
-        <p>Track, monitor, and protect with our iPhone, Android, WhatsApp spy apps, and anti-spyware solutions.</p>
-        <button class="cta-button">Live Chat Now</button>
-    </section>
+<div class="container">
+  <!-- iPhone Spy App Section -->
+  <section class="section" id="iphone-spy-app">
+    <h2>iPhone Spy App</h2>
+    <p>Track iPhone activities securely with our top-rated app.</p>
+    <button class="cta-button">Try Now</button>
+  </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <h3>Our Services</h3>
-        <div class="feature-item" id="iphone-spy">
-            <h4>iPhone Spy App</h4>
-            <p>Monitor iPhone activity, GPS, messages, and more remotely.</p>
-            <button class="cta-button">Start Monitoring Now</button>
-        </div>
-        <div class="feature-item" id="whatsapp-spy">
-            <h4>WhatsApp Spy App</h4>
-            <p>Track WhatsApp messages, calls, and media effortlessly.</p>
-            <button class="cta-button">Learn More</button>
-        </div>
-        <div class="feature-item" id="android-spy">
-            <h4>Android Spy App</h4>
-            <p>Full control over Android devices with real-time monitoring.</p>
-            <button class="cta-button">Get Started</button>
-        </div>
-        <div class="feature-item" id="anti-spyware">
-            <h4>Anti-Spyware</h4>
-            <p>Protect your devices from unauthorized surveillance.</p>
-            <button class="cta-button">Secure My Device</button>
-        </div>
-    </section>
+  <!-- WhatsApp Spy App Section -->
+  <section class="section" id="whatsapp-spy-app">
+    <h2>WhatsApp Spy App</h2>
+    <p>Monitor WhatsApp messages and activities with ease.</p>
+    <button class="cta-button">Start Spying</button>
+  </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <h3>What Our Clients Say</h3>
-        <p>"This app saved my business by allowing me to monitor suspicious activities. - Sarah P."</p>
-        <p>"An incredible tool for digital surveillance. Highly recommend. - John D."</p>
-    </section>
+  <!-- Android Spy App Section -->
+  <section class="section" id="android-spy-app">
+    <h2>Android Spy App</h2>
+    <p>Track and manage Android devices from anywhere in the world.</p>
+    <button class="cta-button">Get Started</button>
+  </section>
 
-    <!-- Refund Policy Section -->
-    <section class="refund-policy" id="refund-policy">
-        <h3>Refund Policy</h3>
-        <p>If you're not satisfied with our service, get your money back within 30 days. No questions asked!</p>
-    </section>
+  <!-- Anti-Spyware Section -->
+  <section class="section" id="anti-spyware">
+    <h2>Anti-Spyware</h2>
+    <p>Protect your devices from spyware with our advanced solutions.</p>
+    <button class="cta-button">Secure Now</button>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>Contact us: +123 456 7890 | <a href="mailto:contact@keyofaccess.com">contact@keyofaccess.com</a></p>
-        <p>Powered by Smartsupp Live Chat | <a href="https://www.smartsupp.com" target="_blank">Learn more</a></p>
-    </footer>
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial">
+      "This app saved my business from espionage! Highly recommended."
+    </div>
+    <div class="testimonial">
+      "Super easy to use and effective. Worth every penny."
+    </div>
+  </section>
 
-    <!-- Google Translator Script -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- Contact Information -->
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>If you're unsatisfied, we offer a full refund within 30 days of purchase.</p>
+    <p>Phone: +1 (234) 567-8901 | Email: support@surveillancesolutions.com</p>
+  </section>
+</div>
 
-    <!-- Smartsupp Live Chat Script -->
-    <script type="text/javascript">
-        var _smartsupp = _smartsupp || {};
-        _smartsupp.key = '401bcc9fd07ba18c08b694a3122d6645acb2ba59';
-        window.smartsupp||(function(d) {
-        var s,c,o=smartsupp=function(){ o.push(arguments)};o.=[];
-        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-        c.type='text/javascript';c.charset='utf-8';c.async=true;
-        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-        })(document);
-    </script>
+<!-- Footer -->
+<footer>
+  &copy; 2024 Surveillance Solutions. All Rights Reserved.
+</footer>
+
+<!-- Smartsupp Live Chat -->
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+  var _smartsupp = _smartsupp || {};
+  _smartsupp.key = '401bcc9fd07ba18c08b694a3122d6645acb2ba59';
+  window.smartsupp||(function(d) {
+    var s,c,o=smartsupp=function(){ o.push(arguments)};o=[];
+    s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+    c.type='text/javascript';c.charset='utf-8';c.async=true;
+    c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+  })(document);
+</script>
+<noscript> Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
+
+<!-- Google Translate Script -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
