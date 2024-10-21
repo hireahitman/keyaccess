@@ -3,651 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Key Of Access</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Surveillance SaaS</title>
     <style>
-      
-        /* General Styling */
-        * {
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
         }
-        body {
-            background-color: #f4f4f9;
-            color: #333;
-        }
-
-        /* Header Styling */
         header {
-            background-color: #1a237e;
-            color: white;
+            background-color: #2C3E50;
             padding: 15px;
+            color: #fff;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        header .logo {
-            font-size: 24px;
-            font-weight: bold;
+        header h1 {
+            margin: 0;
         }
-        header nav ul {
-            list-style: none;
+        .nav-bar {
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
-        header nav ul li a {
+        .nav-bar a {
             color: white;
             text-decoration: none;
-            font-size: 16px;
+            padding: 10px;
         }
-        .cta-buttons a {
-            color: white;
-            background-color: #f44336;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin-left: 10px;
-            text-decoration: none;
-        }
-        .cta-buttons a:hover {
-            background-color: #e53935;
-        }
-
-        /* Hero Section */
         .hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 50px;
-            background-color: #e3f2fd;
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to right, #2980B9, #6DD5FA);
+            color: white;
         }
-        .hero-text h1 {
-            font-size: 48px;
-            color: #1a237e;
+        .hero h2 {
+            font-size: 2.5rem;
         }
-        .hero-text p {
-            font-size: 24px;
-            color: #424242;
+        .hero p {
+            font-size: 1.2rem;
             margin: 20px 0;
         }
-        .hero-img img {
-            max-width: 500px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #1a237e;
+        .cta-button {
+            padding: 15px 30px;
+            background-color: #e67e22;
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 50px;
-            text-align: center;
-        }
-        .service-boxes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .service-box {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-        .service-box img {
-            max-width: 100px;
-            margin-bottom: 10px;
-        }
-        .service-box h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        .service-box p {
-            color: #757575;
-            margin-bottom: 15px;
-        }
-        .service-box .btn {
-            background-color: #f44336;
-        }
-
-        /* How It Works Section */
-        .how-it-works {
-            padding: 50px;
-            background-color: #e0e0e0;
-            text-align: center;
-        }
-        .how-it-works .steps {
-            display: flex;
-            justify-content: space-around;
-            gap: 20px;
-        }
-        .how-it-works .step {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 30%;
-        }
-        .how-it-works .step h3 {
-            margin-bottom: 10px;
-        }
-        .how-it-works .step p {
-            color: #757575;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            padding: 50px;
-            background-color: #e3f2fd;
-            text-align: center;
-        }
-        .testimonial-slider {
-            display: flex;
-            overflow-x: auto;
-            gap: 20px;
-        }
-        .testimonial {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            min-width: 300px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 50px;
-            text-align: center;
-        }
-        .pricing-table {
-            display: flex;
-            justify-content: space-around;
-        }
-        .plan {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            width: 30%;
-        }
-        .plan h3 {
-            margin-bottom: 10px;
-        }
-        .plan p {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        .plan ul {
-            list-style: none;
-            color: #757575;
-            margin-bottom: 15px;
-        }
-
-        /* Floating Action Buttons */
-        .floating-buttons {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .floating-buttons a {
-            background-color: #1a237e;
-            color: white;
-            padding: 15px;
-            border-radius: 50%;
-            text-align: center;
-            text-decoration: none;
-        }
-        .floating-buttons a:hover {
-            background-color: #0d1b57;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1a237e;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-            padding-top: 60px;
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 10px;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
+            border: none;
             cursor: pointer;
+            font-size: 1rem;
+        }
+        .features, .testimonials, .refund-policy, footer {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .features h3, .testimonials h3, .refund-policy h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .features .feature-item {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .feature-item h4 {
+            font-size: 1.5rem;
+        }
+        footer {
+            background-color: #2C3E50;
+            color: white;
+        }
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
+
     <!-- Header -->
     <header>
-        <div class="logo">Key Of Access</div>
-        <nav>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="https://cdpn.io/cpe/boomboom/index.html?key=index.html-cfcb3cee-710f-333e-59d8-80f6e3d71317#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="cta-buttons">
-            <a href="tel:+1234567890" class="cta-btn call-btn">Call Us</a>
-            <a href="https://wa.me/1234567890" class="cta-btn telegram-btn">Telegram</a>
+        <h3>KEY OF ACCESS</h3>
+        <!-- Google Translator -->
+        <div id="google_translate_element"></div>
+        <div class="nav-bar">
+            <a href="#iphone-spy">iPhone Spy App</a>
+            <a href="#whatsapp-spy">WhatsApp Spy App</a>
+            <a href="#android-spy">Android Spy App</a>
+            <a href="#anti-spyware">Anti-Spyware</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#refund-policy">Refund Policy</a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-text">
-            <h1>AI-Powered Monitoring, Real-Time Results</h1>
-            <p>Stay ahead with intelligent surveillance</p>
-            <a href="#services" class="btn">Get Started</a>
-        </div>
-        <div class="hero-img">
-            <img src="https://i.ibb.co/xgvG9PD/Whats-App-Image-2024-10-19-at-2-16-30-PM.jpg" alt="AI Monitoring">
-        </div>
+        <h2>Secure Your Digital Space</h2>
+        <p>Track, monitor, and protect with our iPhone, Android, WhatsApp spy apps, and anti-spyware solutions.</p>
+        <button class="cta-button">Live Chat Now</button>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2>Our Advanced Monitoring Services</h2>
-        <div class="service-boxes">
-            <div class="service-box">
-                <h3>iPhone Spy App</h3>
-                <img src="https://i.ibb.co/KV1z6Gk/DALL-E-2024-10-14-17-28-32-A-sleek-modern-depiction-of-i-Phone-monitoring-showcasing-a-futuristic-i.webp" alt="iPhone Spy App">
-                <p>Monitor activities on any iPhone effortlessly.</p>
-                <a href="#" class="btn" onclick="openModal('iphoneModal')">Learn More</a>
-            </div>
-            <div class="service-box">
-                <h3>Android Spy App</h3>
-                <img src="https://i.ibb.co/dkzcd9x/DALL-E-2024-10-15-20-54-48-A-sleek-and-modern-depiction-of-Android-device-monitoring-showcasing-a-fu.webp" alt="Android Spy App">
-                <p>Gain insights into Android device activities easily.</p>
-                <a href="#" class="btn" onclick="openModal('androidModal')">Learn More</a>
-            </div>
-            <div class="service-box">
-                <h3>WhatsApp Spy App</h3>
-                <img src="https://i.ibb.co/5cTLD89/DALL-E-2024-10-14-17-28-14-A-modern-depiction-of-Whats-App-monitoring-featuring-a-smartphone-interfa.webp" alt="WhatsApp Spy App">
-                <p>Gain insights into WhatsApp conversations effortlessly.</p>
-                <a href="#" class="btn" onclick="openModal('whatsappModal')">Learn More</a>
-            </div>
-            <div class="service-box">
-                <h4>Anti-Spyware Cybersecurity Protection</h4>
-                <img src="https://i.ibb.co/mJSkPdH/Whats-App-Image-2024-10-19-at-8-45-27-PM.jpg" alt="Cybersecurity Protection">
-                <p>Ensure your digital safety with our top-tier protection services.</p>
-                <a href="#" class="btn" onclick="openModal('cybersecurityModal')">Learn More</a>
-            </div>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h3>Our Services</h3>
+        <div class="feature-item" id="iphone-spy">
+            <h4>iPhone Spy App</h4>
+            <p>Monitor iPhone activity, GPS, messages, and more remotely.</p>
+            <button class="cta-button">Start Monitoring Now</button>
         </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works">
-        <h2>How It Works</h2>
-        <div class="steps">
-            <div class="step">
-                <h3>Step 1: Installation</h3>
-                <p>Download and install the app on the target device.</p>
-            </div>
-            <div class="step">
-                <h3>Step 2: Configuration</h3>
-                <p>Configure the settings according to your monitoring needs.</p>
-            </div>
-            <div class="step">
-                <h3>Step 3: Start Monitoring</h3>
-                <p>Access your dashboard to start monitoring in real time.</p>
-            </div>
+        <div class="feature-item" id="whatsapp-spy">
+            <h4>WhatsApp Spy App</h4>
+            <p>Track WhatsApp messages, calls, and media effortlessly.</p>
+            <button class="cta-button">Learn More</button>
+        </div>
+        <div class="feature-item" id="android-spy">
+            <h4>Android Spy App</h4>
+            <p>Full control over Android devices with real-time monitoring.</p>
+            <button class="cta-button">Get Started</button>
+        </div>
+        <div class="feature-item" id="anti-spyware">
+            <h4>Anti-Spyware</h4>
+            <p>Protect your devices from unauthorized surveillance.</p>
+            <button class="cta-button">Secure My Device</button>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial-slider">
-            <div class="testimonial">
-                <p>"The iPhone Spy App helped me keep track of my kids' online activities. Highly recommend!"</p>
-                <span>- Sarah T.</span>
-            </div>
-            <div class="testimonial">
-                <p>"The Android Spy App is easy to use and provides all the information I need."</p>
-                <span>- John D.</span>
-            </div>
-            <div class="testimonial">
-                <p>"Exceptional service! The WhatsApp Spy App gave me peace of mind."</p>
-                <span>- Lisa K.</span>
-            </div>
-            <div class="testimonial">
-                <p>"I feel safer with the Anti-Spyware Cybersecurity Protection. It's worth every penny!"</p>
-                <span>- Mike P.</span>
-            </div>
-        </div>
+    <section class="testimonials" id="testimonials">
+        <h3>What Our Clients Say</h3>
+        <p>"This app saved my business by allowing me to monitor suspicious activities. - Sarah P."</p>
+        <p>"An incredible tool for digital surveillance. Highly recommend. - John D."</p>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <h2>Pricing Plans</h2>
-        <div class="pricing-table">
-            <div class="plan">
-                <h3>Basic Plan</h3>
-                <p>$29/month</p>
-                <ul>
-                    <li>Access to all basic features</li>
-                    <li>24/7 Support</li>
-                </ul>
-                <a href="#" class="btn">Choose Plan</a>
-            </div>
-            <div class="plan">
-                <h3>Premium Plan</h3>
-                <p>$49/month</p>
-                <ul>
-                    <li>All features included</li>
-                    <li>Priority Support</li>
-                </ul>
-                <a href="#" class="btn">Choose Plan</a>
-            </div>
-            <div class="plan">
-                <h3>Enterprise Plan</h3>
-                <p>$99/month</p>
-                <ul>
-                    <li>Custom features</li>
-                    <li>Dedicated Support</li>
-                </ul>
-                <a href="#" class="btn">Choose Plan</a>
-            </div>
-        </div>
+    <!-- Refund Policy Section -->
+    <section class="refund-policy" id="refund-policy">
+        <h3>Refund Policy</h3>
+        <p>If you're not satisfied with our service, get your money back within 30 days. No questions asked!</p>
     </section>
-
-    <!-- Floating Action Buttons -->
-    <div class="floating-buttons">
-        <a href="tel:+1234567890" class="call-btn"><i class="fas fa-phone-alt"></i></a>
-        <a href="https://wa.me/1234567890" class="Email-btn"><i class="fab fa-envelope"></i></a>
-    </div>
 
     <!-- Footer -->
     <footer>
-        <p>© 2024 Key Of Access. All rights reserved.</p>
+        <p>Contact us: +123 456 7890 | <a href="mailto:support@surveillancesaas.com">support@surveillancesaas.com</a></p>
+        <p>Powered by Smartsupp Live Chat | <a href="https://www.smartsupp.com" target="_blank">Learn more</a></p>
     </footer>
 
-    <!-- Modals for Service Details -->
-    <div id="iphoneModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('iphoneModal')">&times;</span>
-            <h2>iPhone Spy App</h2>
-            <p>Introducing the <strong>Key of Access iPhone Spy App</strong>, tailored specifically for iOS devices to deliver advanced surveillance capabilities with precision and stealth. Below are the detailed features of both the <strong>Standard</strong> and <strong>Premium</strong> packages:</p>
-
-<h2>Standard Package Features</h2>
-<ol>
-    <li class="feature"><strong>Universal App Access:</strong> Secure remote access to all apps and files on the target iPhone, including WhatsApp and other social media platforms, ensuring you capture a comprehensive snapshot of the device’s digital activity.</li>
-    
-    <li class="feature"><strong>Call Logs History:</strong> Access detailed call history logs, including all incoming, outgoing, and missed calls, offering insights into the phone’s communication patterns.</li>
-    
-    <li class="feature"><strong>Live GPS Tracker:</strong> Although this tracker does not display directly on Google Maps within the app, you can copy the GPS coordinates and paste them into Google Maps to track movements and directions in real-time.</li>
-</ol>
-
-<h2>Premium Features of iPhone Spy App</h2>
-<p>The <strong>Premium</strong> package builds upon the <strong>Standard</strong> features with additional advanced functionalities designed for deep surveillance and enhanced monitoring capabilities:</p>
-<ol>
-    <li class="feature"><strong>iCloud Data Access:</strong> Retrieve previously deleted texts and files from iCloud, giving you access to a wealth of historical data that can be critical for comprehensive monitoring.</li>
-    
-    <li class="feature"><strong>Remote Audio Recording:</strong> Use the target iPhone as a remote sound recorder to capture ambient audio around the device. This capability is crucial for environmental monitoring without alerting the target.</li>
-    
-    <li class="feature"><strong>Enhanced App Access:</strong> While the Standard package offers extensive app access, Premium includes the ability to interact with all non-financial applications, maintaining security for sensitive data.</li>
-    
-    <li class="feature"><strong>Social Media Profiler:</strong> Analyze in-depth the interactions, messages, and media across various social media platforms directly from the target device, giving insights into social behaviors and networks.</li>
-    
-    <li class="feature"><strong>Geolocation History:</strong> Track and store historical GPS data, allowing you to view past movements and patterns over time, which can be crucial for pattern analysis or security assessments.</li>
-    
-    <li class="feature"><strong>Discreet Notifications:</strong> Receive real-time alerts and notifications related to critical activities without alerting the target device or its user, maintaining the stealthiness of your surveillance.</li>
-    
-    <li class="feature"><strong>Camera Stream Access:</strong> Remotely activate and view real-time camera feeds from the target iPhone, offering the ability to see and record live environments around the device.</li>
-</ol>
-
-<h2>Requirements</h2>
-<p>Activation only requires the phone number associated with the target iPhone or the device’s IMEI. There is no need for iCloud access or physical access to the iPhone, simplifying the setup.</p>
-
-<h2>Price</h2>
-<p>For current pricing details of each package, please contact us directly as rates are subject to change.</p>
-
-<h2>License Duration</h2>
-<ul>
-    <li><strong>Using Phone Number:</strong> Access will end if the phone number is changed but continues with the same number even if the device is changed.</li>
-    <li><strong>Using IMEI:</strong> Access terminates if the iPhone is replaced, regardless of whether the phone number remains the same.</li>
-</ul>
-
-<p>Explore the capabilities of the <strong>Key of Access iPhone Spy App</strong> to choose the perfect surveillance package for your needs. This sophisticated tool is designed for discreet monitoring and deep exploration of iOS devices.</p>
-
-        </div>
-    </div>
-
-    <div id="androidModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('androidModal')">&times;</span>
-            <h2>Android Spy App</h2>
-            <p>Unveiling the <strong>Key of Access Android Spy App</strong>, an advanced surveillance tool tailored for the Android platform. This sophisticated app reshapes how you monitor target devices, offering unparalleled discretion and in-depth control. Below are the enhanced features and functionalities available in both the <strong>Standard</strong> and <strong>Premium</strong> packages:</p>
-
-<h2>Standard Package Features</h2>
-<ol>
-    <li class="feature"><strong>Universal App Access:</strong> Enjoy comprehensive access to all applications on the target Android device, including WhatsApp and other social media platforms. Access extends to all files stored on the device for a full overview of digital activities.</li>
-    
-    <li class="feature"><strong>Call Logs:</strong> Detailed records of all outgoing, incoming, and missed calls are provided, including date, time stamps, and call durations. This package does not include live call listening or video call viewing capabilities.</li>
-    
-    <li class="feature"><strong>Contact Access:</strong> Full visibility into the device’s contact list, providing names and numbers stored.</li>
-    
-    <li class="feature"><strong>Multilingual Dashboard:</strong> A user-friendly dashboard that supports multiple languages, allowing you to customize the interface according to your preferences.</li>
-    
-    <li class="feature"><strong>Live GPS Tracking:</strong> Track the device’s location in real-time using Google Maps integration, with interactive features to zoom and pan for precise location details.</li>
-</ol>
-
-<h2>Premium Features of Android Spy App</h2>
-<p>Building on the Standard Package, the Premium features offer deeper insights and enhanced functionalities for sophisticated monitoring needs:</p>
-<ol>
-    <li class="feature"><strong>Enhanced Call Interception:</strong> Listen to live calls in real-time and access full video call visibility, allowing you to observe and hear all participants without detection.</li>
-    
-    <li class="feature"><strong>Ambient Recording:</strong> Activate the device’s microphone to record surrounding audio, capturing conversations and background sounds to gather more contextual information.</li>
-    
-    <li class="feature"><strong>Access to Encrypted Media:</strong> Retrieve encrypted files and communications, providing access to content typically secured by end-to-end encryption.</li>
-    
-    <li class="feature"><strong>Advanced Historical Data Recovery:</strong> Extend your access to deleted files and texts up to 24 months old, surpassing the 12-month retrieval capacity of the standard package.</li>
-    
-    <li class="feature"><strong>Remote Camera Manipulation:</strong> Remotely control the device’s camera to discreetly take pictures or videos, assisted by live support to ensure stealthy operation without alerting the target.</li>
-    
-    <li class="feature"><strong>Social Media Monitor:</strong> Gain direct access to the logs and activities of all major social platforms, capturing messages, posts, and interactions that give deeper insight into the target’s social behaviors.</li>
-    
-    <li class="feature"><strong>Geofencing Capabilities:</strong> Set virtual boundaries and receive alerts when the target device enters or leaves specific locations, offering advanced movement tracking.</li>
-</ol>
-
-<h2>Duration of Completion</h2>
-<p>The installation and activation of the Key of Access Android Spy App are efficiently handled within just 3 hours, delivered directly to your email.</p>
-
-<h2>Requirements</h2>
-<p>Start monitoring with just the target’s phone number—the SIM card number inside the Android phone you wish to monitor—along with proof of payment. No physical access to the device is needed.</p>
-
-<h2>Price</h2>
-<p>For up-to-date pricing information, please contact our customer service directly, as rates are subject to change.</p>
-
-<h2>License Duration</h2>
-<p>The app license is active until the target phone number changes. It connects through the SIM card, automatically disconnecting if the target device loses internet connection or the SIM card is removed.</p>
-
-<p>Delve into the advanced capabilities of the <strong>Key of Access Android Spy App</strong>.</p>
-        </div>
-    </div>
-
-    <div id="whatsappModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('whatsappModal')">&times;</span>
-            <h2>WhatsApp Spy App</h2>
-            <h1>Features</h1>
-
-<ol>
-    <li class="feature"><strong>Complete WhatsApp Access:</strong> This app offers comprehensive access to WhatsApp on the target device, functioning as if you have the exact WhatsApp application of the target on your own phone. Gain full visibility into both incoming and outgoing texts, pictures, and videos.</li>
-    
-    <li class="feature"><strong>Recovery of Deleted Content:</strong> Retrieve WhatsApp texts and files that have been deleted within the past 6 months, ensuring you don’t miss any critical information.</li>
-    
-    <li class="feature"><strong>Interactive Messaging Capability:</strong> Send texts and files from the target’s WhatsApp account, seamlessly mimicking the target’s ability to communicate.</li>
-    
-    <li class="feature"><strong>Control Over Messages:</strong> Possess the ability to delete texts and files from the target’s WhatsApp, providing complete control over the communication logs.</li>
-</ol>
-
-<h2>Requirements</h2>
-<ul>
-    <li>Only the target’s WhatsApp number is required for setup, simplifying the process to start monitoring without needing additional information.</li>
-</ul>
-
-<h2>Price</h2>
-<ul>
-    <li>For details on the pricing of each package, please contact us directly, as rates may vary based on the services selected.</li>
-</ul>
-
-<h2>License Duration</h2>
-<ul>
-    <li>The license for the spy app remains active until the WhatsApp number of the target is changed. Should the target number be updated to a new one, the app will cease to function under the existing setup.</li>
-</ul>
-
-<p>Discover the full capabilities of the <strong>Key of Access WhatsApp Spy App</strong> and leverage its powerful features for meticulous monitoring and interaction with the target’s WhatsApp activities.</p>
-        </div>
-    </div>
-
-    <div id="cybersecurityModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('cybersecurityModal')">&times;</span>
-            <h5>Anti-Spyware Cybersecurity Protection</h5>
-            <p>In an era where digital threats are increasingly sophisticated, safeguarding personal and professional data is more crucial than ever. <strong>Key of Access</strong>, renowned for its advanced surveillance technologies, now offers equally robust <strong>Anti-Spyware Cybersecurity Protection</strong>. This service is meticulously designed to defend your devices against malicious spyware, ensuring comprehensive security and privacy. Below are the key features that set our anti-spyware solution apart:</p>
-
-<h2>Features of Key of Access Anti-Spyware Protection</h2>
-
-<ol>
-    <li class="feature"><strong>Real-Time Threat Detection:</strong> Our system vigilantly monitors your devices around the clock for signs of unauthorized access or spyware installations. Employing advanced detection algorithms, Key of Access identifies potential threats in real-time, alerting you immediately.</li>
-    
-    <li class="feature"><strong>Intruder Snapshot Capability:</strong> Enhancing security measures, our protection software can activate your device’s camera to take a photo of the attacker when unauthorized access attempts are detected. This unique feature helps in identifying and responding to security breaches more effectively.</li>
-    
-    <li class="feature"><strong>Advanced Removal Tools:</strong> Upon detecting spyware, our robust removal tools spring into action to thoroughly eradicate the threat from your system, ensuring complete removal of malware and securing future vulnerabilities.</li>
-    
-    <li class="feature"><strong>Regular Security Updates:</strong> Key of Access combats the ever-evolving spyware tactics by regularly updating its security protocols, staying ahead of the latest exploitation techniques and vulnerabilities.</li>
-    
-    <li class="feature"><strong>Comprehensive Device Coverage:</strong> Our anti-spyware service extends to a wide array of devices including smartphones, tablets, laptops, and desktops, catering to various operating systems with tailored protection.</li>
-    
-    <li class="feature"><strong>Encrypted Data Protection:</strong> We utilize strong encryption to secure your data from unauthorized interception, ensuring your sensitive information remains inaccessible even during a device compromise.</li>
-    
-    <li class="feature"><strong>User-Friendly Interface:</strong> Easily manage your cybersecurity settings through our intuitive interface, where users can adjust protection levels, initiate scans, and view security reports effortlessly.</li>
-    
-    <li class="feature"><strong>Expert Support:</strong> With 24/7 customer support, Key of Access provides expert assistance and guidance for any security concerns, helping you optimize your protection settings and resolve any issues swiftly.</li>
-</ol>
-
-<h2>Requirements</h2>
-<ul>
-    <li><strong>Compatibility:</strong> Compatible with most current systems and devices; no specific hardware needed.</li>
-    <li><strong>Internet Connection:</strong> Requires an internet connection for real-time protection and regular security updates.</li>
-</ul>
-
-<h2>Price</h2>
-<p><strong>Contact Us:</strong> For pricing details, as we offer a variety of packages tailored to different needs, from individual users to large enterprises.</p>
-
-<h2>License Duration</h2>
-<p><strong>Subscription Options:</strong> Our subscriptions are typically offered on an annual basis, with options for renewal and customization for enterprise-level needs.</p>
-
-<p>Protect your digital life with <strong>Key of Access Anti-Spyware Cybersecurity Protection</strong>. Enjoy peace of mind knowing that our cutting-edge technology not only guards every digital interaction but also provides active measures like intruder snapshots to enhance your security strategy.</p>
-
-        </div>
-    </div>
-
-    <script>
-        // Testimonial Slider Auto-scroll
-        document.addEventListener("DOMContentLoaded", function () {
-            const slider = document.querySelector(".testimonial-slider");
-            let isDown = false;
-            let startX;
-            let scrollLeft;
-
-            slider.addEventListener("mousedown", (e) => {
-                isDown = true;
-                startX = e.pageX - slider.offsetLeft;
-                scrollLeft = slider.scrollLeft;
-            });
-
-            slider.addEventListener("mouseleave", () => {
-                isDown = false;
-            });
-
-            slider.addEventListener("mouseup", () => {
-                isDown = false;
-            });
-
-            slider.addEventListener("mousemove", (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - slider.offsetLeft;
-                const walk = (x - startX) * 3; //scroll-fast
-                slider.scrollLeft = scrollLeft - walk;
-            });
-        });
-
-        // Modal Functions
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = "block";
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-        }
-
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            const modals = document.getElementsByClassName('modal');
-            for (let i = 0; i < modals.length; i++) {
-                if (event.target == modals[i]) {
-                    modals[i].style.display = "none";
-                }
-            }
+    <!-- Google Translator Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
         }
     </script>
-<!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = '401bcc9fd07ba18c08b694a3122d6645acb2ba59';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o..push(arguments)};o.=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-</script>
-<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Smartsupp Live Chat Script -->
+    <script type="text/javascript">
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = '401bcc9fd07ba18c08b694a3122d6645acb2ba59';
+        window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o.push(arguments)};o.=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+        })(document);
+    </script>
+
 </body>
 </html>
