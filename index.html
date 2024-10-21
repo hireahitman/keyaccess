@@ -1,160 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surveillance Solutions - Spy & Anti-Spyware Apps</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    header {
-      background-color: #222;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header .logo {
-      font-size: 1.5rem;
-    }
-    header .google-translate {
-      margin-left: 1rem;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-    .section {
-      padding: 2rem 0;
-      text-align: center;
-    }
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .cta-button {
-      background-color: #28a745;
-      color: white;
-      padding: 1rem 2rem;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-    .cta-button:hover {
-      background-color: #218838;
-    }
-    .testimonials {
-      background-color: #fff;
-      padding: 2rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .testimonials .testimonial {
-      margin-bottom: 1rem;
-      font-style: italic;
-    }
-    footer {
-      background-color: #222;
-      color: white;
-      padding: 1rem 0;
-      text-align: center;
-    }
-    .contact {
-      margin-top: 2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Surveillance Services</title>
+    <style>
+        /* Basic reset and global styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header styling */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .translator {
+            margin-left: 10px;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        nav a:hover {
+            background: #555;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            background: url('hero-background.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .cta {
+            padding: 10px 20px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .cta:hover {
+            background: #218838;
+        }
+
+        /* Section styling */
+        section {
+            padding: 50px 20px;
+            background: #fff;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 30px;
+            color: #333;
+        }
+
+        section p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .features {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Testimonials styling */
+        .testimonials {
+            background: #f9f9f9;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            margin-bottom: 20px;
+        }
+
+        .testimonial-item {
+            margin: 20px 0;
+        }
+
+        .testimonial-item p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Refund Policy Section */
+        .refund-policy {
+            background: #e9ecef;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .refund-policy p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">Surveillance Solutions</div>
-  <!-- Google Translator -->
-  <div class="google-translate">
-    <div id="google_translate_element"></div>
-  </div>
-</header>
+    <!-- Header -->
+    <header>
+        <div class="logo">Surveillance Services</div>
+        <div class="translator">
+            <div id="google_translate_element"></div>
+        </div>
+        <nav>
+            <a href="#iphone-spy">iPhone Spy App</a>
+            <a href="#whatsapp-spy">WhatsApp Spy App</a>
+            <a href="#android-spy">Android Spy App</a>
+            <a href="#anti-spyware">Anti-Spyware</a>
+        </nav>
+    </header>
 
-<div class="container">
-  <!-- iPhone Spy App Section -->
-  <section class="section" id="iphone-spy-app">
-    <h2>iPhone Spy App</h2>
-    <p>Track iPhone activities securely with our top-rated app.</p>
-    <button class="cta-button">Try Now</button>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Introducing the Key of Access</h1>
+        <p>The Zero Click and Zero Interaction Exploit Spy App that brings surveillance to the next level of stealth and power.</p>
+        <button class="cta">Get Started</button>
+    </section>
 
-  <!-- WhatsApp Spy App Section -->
-  <section class="section" id="whatsapp-spy-app">
-    <h2>WhatsApp Spy App</h2>
-    <p>Monitor WhatsApp messages and activities with ease.</p>
-    <button class="cta-button">Start Spying</button>
-  </section>
+    <!-- Content Section -->
+    <section id="features">
+        <div class="features">
+            <h2>Zero Click and Zero Interaction Technologies</h2>
+            <p><strong>Zero Click Technology</strong> eliminates the need for any physical interaction with the target’s device. Using zero-day exploits and covert techniques, it silently infiltrates the target’s system.</p>
+            <p><strong>Zero Interaction Stealth</strong> deepens this secrecy, utilizing polymorphic algorithms to remain invisible, evading detection by the most advanced anti-spyware systems.</p>
+            <p>The introduction of advanced AI has revolutionized the user experience. Key of Access adapts across devices and operating systems, optimizing stealth and efficacy with unparalleled ease of use.</p>
+            <p>Access encrypted messaging apps like WhatsApp and Telegram, track GPS locations, and extract deleted data, all without leaving a trace.</p>
+        </div>
+    </section>
 
-  <!-- Android Spy App Section -->
-  <section class="section" id="android-spy-app">
-    <h2>Android Spy App</h2>
-    <p>Track and manage Android devices from anywhere in the world.</p>
-    <button class="cta-button">Get Started</button>
-  </section>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-item">
+            <p>"The Key of Access app exceeded all my expectations. It’s truly invisible, and the AI enhancements made it super easy to use!" - John Doe</p>
+        </div>
+        <div class="testimonial-item">
+            <p>"Unmatched in the field of surveillance. It delivered everything as promised without a single detection alert." - Jane Smith</p>
+        </div>
+    </section>
 
-  <!-- Anti-Spyware Section -->
-  <section class="section" id="anti-spyware">
-    <h2>Anti-Spyware</h2>
-    <p>Protect your devices from spyware with our advanced solutions.</p>
-    <button class="cta-button">Secure Now</button>
-  </section>
+    <!-- Refund Policy -->
+    <section class="refund-policy">
+        <p>We offer a 100% refund if you are dissatisfied. Your satisfaction is guaranteed, or your money back!</p>
+    </section>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial">
-      "This app saved my business from espionage! Highly recommended."
-    </div>
-    <div class="testimonial">
-      "Super easy to use and effective. Worth every penny."
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Surveillance Services. All Rights Reserved.</p>
+    </footer>
 
-  <!-- Contact Information -->
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <p>If you're unsatisfied, we offer a full refund within 30 days of purchase.</p>
-    <p>Phone: +1 (234) 567-8901 | Email: support@surveillancesolutions.com</p>
-  </section>
-</div>
+    <!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = '401bcc9fd07ba18c08b694a3122d6645acb2ba59';
+    window.smartsupp||(function(d) {
+      var s,c,o=smartsupp=function(){ o..push(arguments)};o.=[];
+      s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+      c.type='text/javascript';c.charset='utf-8';c.async=true;
+      c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+    })(document);
+    </script>
 
-<!-- Footer -->
-<footer>
-  &copy; 2024 Surveillance Solutions. All Rights Reserved.
-</footer>
-
-<!-- Smartsupp Live Chat -->
-<!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-  var _smartsupp = _smartsupp || {};
-  _smartsupp.key = '401bcc9fd07ba18c08b694a3122d6645acb2ba59';
-  window.smartsupp||(function(d) {
-    var s,c,o=smartsupp=function(){ o.push(arguments)};o=[];
-    s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-    c.type='text/javascript';c.charset='utf-8';c.async=true;
-    c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-  })(document);
-</script>
-<noscript> Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
-
-<!-- Google Translate Script -->
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-  }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <!-- Google Translator Script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
