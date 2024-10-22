@@ -319,6 +319,114 @@
         <div class="translator">
             <div id="google_translate_element"></div>
         </div>
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Hamburger Menu</title>
+  <style>
+    /* Basic styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      padding: 10px 20px;
+      color: white;
+      text-align: center;
+    }
+
+    /* Hamburger Menu */
+    .menu-btn {
+      display: none;
+      font-size: 30px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+
+    .menu-btn:focus {
+      outline: none;
+    }
+
+    nav {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #333;
+      width: 200px;
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 999;
+    }
+
+    nav a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      border-bottom: 1px solid #444;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+    /* Responsive: Show hamburger menu button and hide regular menu on small screens */
+    @media (max-width: 768px) {
+      .menu-btn {
+        display: block;
+      }
+
+      nav.show {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <button class="menu-btn">&#9776;</button> <!-- Hamburger icon -->
+</header>
+
+<nav id="menu">
+  <a href="#android-spy">Android Spy App</a>
+  <a href="#iphone-spy">iPhone Spy App</a>
+  <a href="#whatsapp-spy">WhatsApp Spy App</a>
+  <a href="#anti-spyware">Anti Spyware Cybersecurity Protection</a>
+</nav>
+
+<main>
+  <!-- Your content goes here, such as the Android, iPhone spy app sections -->
+</main>
+
+<script>
+  // Toggle menu display
+  const menuBtn = document.querySelector('.menu-btn');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+
+  // Close menu when clicking outside of it
+  document.addEventListener('click', function (event) {
+    if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+      menu.classList.remove('show');
+    }
+  });
+</script>
     </header>
 
     <!-- Hero Section -->
