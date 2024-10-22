@@ -33,6 +33,7 @@
     .logo {
       font-size: 24px;
       font-weight: bold;
+      cursor: pointer; /* Pointer cursor for clickable logo */
     }
 
     .translator {
@@ -218,6 +219,7 @@
 
   <!-- Header -->
   <header>
+    <div class="logo" onclick="window.location.href='index.html';">Key Of Access</div> <!-- Logo with redirect -->
     <div class="translator">
       <div id="google_translate_element"></div>
     </div>
@@ -235,7 +237,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-      <h4>Introducing the Key of Access</h4>
+      <h1>Introducing the Key of Access</h1>
       <p>The Zero Click and Zero Interaction Exploit Spy App that brings surveillance to the next level of stealth and power.</p>
       <a href="https://t.me/iaccesskey">
         <button class="cta">Get Started</button>
@@ -301,8 +303,8 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+    <!-- Hamburger Menu Functionality -->
     <script>
-      // Toggle menu display
       const menuBtn = document.querySelector('.menu-btn');
       const menu = document.getElementById('menu');
 
