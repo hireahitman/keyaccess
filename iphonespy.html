@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Hamburger Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> <!-- Link to Montserrat font -->
   <style>
     /* Basic styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
       margin: 0;
       padding: 0;
     }
@@ -17,6 +18,11 @@
       padding: 10px 20px;
       color: white;
       text-align: center;
+    }
+
+    header h3 {
+      margin: 0;
+      cursor: pointer; /* Add cursor pointer to the logo */
     }
 
     /* Hamburger Menu */
@@ -71,12 +77,20 @@
         display: block;
       }
     }
+
+    /* Footer styles */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f1f1f1;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <h3>Key Of Access</h3>
+  <h3 onclick="window.location.href='index.html'">Key Of Access</h3> <!-- Logo redirects to index.html -->
   <button class="menu-btn">&#9776;</button> <!-- Hamburger icon -->
 </header>
 
@@ -108,8 +122,6 @@
   });
 </script>
 
-</body>
-</html>
 <!-- iPhone Spy App Section -->
 <section id="iphone-spy" style="padding: 50px 20px; background-color: #f8f9fa;">
     <h2 style="text-align: center; margin-bottom: 40px; font-size: 30px; color: #333;">iPhone Spy App</h2>
@@ -172,14 +184,14 @@
 
     <!-- Smartsupp Live Chat script (placed before closing body tag) -->
     <script type="text/javascript">
-    var _smartsupp = _smartsupp || {};
-    _smartsupp.key = '401bcc9fd07ba18c08b694a3122d6645acb2ba59';
-    window.smartsupp||(function(d) {
-      var s,c,o=smartsupp=function(){ o.push(arguments)};o=[];
-      s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-      c.type='text/javascript';c.charset='utf-8';c.async=true;
-      c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-    })(document);
+      var _smartsupp = _smartsupp || {};
+      _smartsupp.key = '401bcc9fd07ba18c08b694a3122d6645acb2ba59';
+      window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o.push(arguments)};o=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+      })(document);
     </script>
 
     <!-- Google Translator Script -->
@@ -191,4 +203,3 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
-</section>
