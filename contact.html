@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .contact-item img {
+            width: 80px;
+            height: 80px;
+            margin-left: 10px;
+        }
+        .icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            font-size: 24px;
+            border: none;
+            margin-bottom: 20px;
+        }
+        .menu {
+            display: none;
+            background-color: #333;
+            color: white;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            width: 200px;
+            border-radius: 8px;
+        }
+        .menu li {
+            padding: 15px;
+            border-bottom: 1px solid #444;
+        }
+        .menu li a {
+            color: white;
+            text-decoration: none;
+        }
+        .menu li:last-child {
+            border-bottom: none;
+        }
+        /* Show menu when open */
+        .menu.open {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hamburger Menu -->
+<div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+</div>
+
+<!-- Menu Items -->
+<ul class="menu" id="menu">
+    <li><a href="#">Android Spy App</a></li>
+    <li><a href="#">iPhone Spy App</a></li>
+    <li><a href="#">WhatsApp Spy App</a></li>
+    <li><a href="#">Anti Spyware & Cybersecurity</a></li>
+    <li><a href="#">Contact</a></li>
+</ul>
+
+<!-- Page Content -->
+<h2></h2>
+<p>We’d love to hear from you! Please feel free to reach out via the options below:</p>
+
+<div class="contact-item">
+    <i class="fas fa-phone-alt icon"></i>
+    <span>+1 (123) 456-7890</span>
+    <img src="https://i.ibb.co/S03340T/QR-CODE-DIRECT-CALL-638652003228883440.png" alt="Scan to Dial">
+</div>
+
+<div class="contact-item">
+    <i class="fas fa-envelope icon"></i>
+    <span>contact@keyofaccess.com</span>
+    <img src="https://i.ibb.co/KxBqk7N/frame-1.png" alt="Scan to Email">
+</div>
+
+<div class="contact-item">
+    <i class="fab fa-telegram-plane icon"></i>
+    <a href="https://t.me/iaccesskey" target="_blank" style="text-decoration: none; color: inherit;">Chat with us on Telegram</a>
+    <img src="https://i.ibb.co/TTX56yf/chat-by-myalice.png" alt="Scan to Telegram">
+</div>
+
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+  var _smartsupp = _smartsupp || {};
+  _smartsupp.key = ''401bcc9fd07ba18c08b694a3122d6645acb2ba59';  // Replace 'your_smartsupp_key' with the actual key provided by Smartsupp
+  window.smartsupp||(function(d) {
+    var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+    s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+    c.type='text/javascript';c.charset='utf-8';c.async=true;
+    c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+  })(document);
+</script>
+
+<!-- JavaScript to open/close the menu and close on outside click -->
+<script>
+    // Toggle menu when hamburger is clicked
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    hamburger.addEventListener('click', function () {
+        menu.classList.toggle('open');
+    });
+
+    // Close the menu when clicking outside of it
+    window.addEventListener('click', function (event) {
+        if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+            menu.classList.remove('open');
+        }
+    });
+</script>
+
+</body>
+</html>
