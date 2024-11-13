@@ -697,29 +697,24 @@ body {
     text-decoration: underline; /* Underline on hover for better UX */
 }
 .telegram-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ff9800; /* Orange color */
-            color: #ffffff;
-            font-size: 24px;
-            padding: 12px;
-            border-radius: 50%;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Hover effect */
-        .telegram-button:hover {
-            background-color: #e68900; /* Darker orange on hover */
-        }
-        
-        /* Icon styling */
-        .material-icons {
-            font-size: 24px;
-        }
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #1fa3f4;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.telegram-button:hover {
+  transform: scale(1.1);
+}
+
+.material-icons {
+  vertical-align: middle;
+}
