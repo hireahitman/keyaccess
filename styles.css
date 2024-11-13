@@ -712,10 +712,10 @@ body {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background-color: #1fa3f4;
+  background-color: #000000;
   color: white;
   padding: 12px;
-  border-radius: 50%;
+  border-radius: 0%;
   text-align: center;
   font-size: 30px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
