@@ -1,10 +1,8 @@
-// Toggle Mobile Navigation
-function toggleMenu() {
-   const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+// Select the menu and the toggle button
+const menu = document.querySelector('.menu');
+const menuToggle = document.querySelector('#mobile-menu');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navMenu.classList.toggle('active');   
-
+// Add a click event to toggle the menu visibility
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
 });
