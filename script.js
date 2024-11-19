@@ -1,8 +1,10 @@
-// Select the menu and the toggle button
-const menu = document.querySelector('.menu');
-const menuToggle = document.querySelector('#mobile-menu');
+// Select the hamburger menu icon and the navigation menu
+const hamburger-Menu = document.querySelector('.hamburger-menu');
+const navMenu = document.querySelector('.nav-menu');
 
-// Add a click event to toggle the menu visibility
-menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('show');
+// Add a click event listener to toggle the menu
+hamburger-Menu.addEventListener('click', () => {
+    // Toggle the "active" class for both the menu and the hamburger icon
+    navMenu.classList.toggle('active');
+    hamburger-Menu.classList.toggle('open');
 });
